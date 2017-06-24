@@ -9,15 +9,9 @@
 
 <div class="container" ng-controller="homeController as HCtrl">
 
-    <button onclick="getLocation()" type="button" id="gps" class="btn btn-primary">Get My Location TODO:GlyphIcon Me</button>
-
     <br />
     <br />
-
-    <div id="locationField">
-        <input id="autocomplete" placeholder="Enter your address"
-               onFocus="geolocate()" type="text"></input>
-    </div>
+    <a href="#" onclick="getLocation()" id="gps" class="btn btn-primary">GPS Location</a>
 
     <div class="list-group">
         <a href="#" class="list-group-item list-group-item-action active">
@@ -53,7 +47,6 @@
                 vm.modalOpen = _modalOpen
                 vm.$uibModal = $uibModal;
 
-
                 render();
 
                 function render() {
@@ -86,10 +79,6 @@
 
 
                 }
-
-
-
-
             }
         })();
 
@@ -120,31 +109,22 @@
         })();
     </script>
 
-    <script>
-        var placeSearch, autocomplete;
-
-        function initAutocomplete() {
-            // Create the autocomplete object, restricting the search to geographical
-            // location types.
-            autocomplete = new google.maps.places.Autocomplete(
-                (document.getElementById('autocomplete')),
-                {types: ['geocode']});
+    <script type="text/javascript">
         var x = document.getElementById("gps");
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+                }
             }
-        }
-        function showPosition(position) {
-            x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-        }
 
-
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+            }
     </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB75i41DrdobNtl1D-moulR4fXxQZmrKYg&libraries=places&callback=initAutocomplete"
-        async defer></script>
+
 }
