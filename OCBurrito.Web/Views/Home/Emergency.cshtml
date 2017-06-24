@@ -9,25 +9,29 @@
         .jumbotron {
             text-align: center;
         }
+
     </style>
 }
 <br />
 <div class="jumbotron">
     <h1 class="display-3" style="text-align:center">Emergency Services</h1>
     <p>Do you have a medical emergency? Refer to the resources below for places near you or call 911.</p>
-    <div class="container-fluid row">
-        <div class="container-fluid col-md-6" id="googleMaps">
-            <div id="floating-panel">
-                <input id="address" type="text" value="Type a location to begin">
-                <input id="submit" type="button" value="Search">
-            </div>
-            <div id="map"></div>
-        </div> <!--googleMaps-->
-        <br />
-        <p class="text-primary">For more information and other resources, visit <a href="www.211oc.org">211 OC</a></p>
-    </div>
+    <br />
+    <div class="center-orientation" style="text-align:center" id="googleMaps">
+        <div id="">
+            <input class="btn btn-primary" id="address" type="text" value="Type a location to begin">
+            <input class="btn btn-primary" id="submit" type="button" value="Search">
+        </div>
+    <br>
+        <div id="map"></div>
+    </div> <!--googleMaps-->
+    <br />
+    <p class="text-primary">For more information and other resources, visit <a href="www.211oc.org">211 OC</a></p>
 </div>
+
+
 @section scripts{
+
     <script>
         // Note: This requires that you consent to location sharing when
         // prompted by your browser. If you see the error "The Geolocation service
@@ -92,4 +96,5 @@
         } //handleLocationError
     </script>
 
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBkkoj56XO_iEvo9YqjEwO0Q5iekPGJjVo&callback=initMap"></script>
 }

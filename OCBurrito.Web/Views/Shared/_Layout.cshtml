@@ -36,7 +36,7 @@
                     <div id="locationField" class="form-group">
                         <input type="text" onfocus="geolocate()" id="autocomplete" class="form-control" placeholder="Enter your address">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
                 @Html.Partial("_LoginPartial")
@@ -71,6 +71,3 @@
     }
 
 </script>
-    <!--For now, the api key is present in the view. Will move the key to the web config and move value to the view with a view model for security reasons.-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkkoj56XO_iEvo9YqjEwO0Q5iekPGJjVo&libraries=places&callback=initAutocomplete"
-        async defer></script>
