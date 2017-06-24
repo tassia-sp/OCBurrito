@@ -46,5 +46,9 @@ namespace OCBurrito.Web.Controllers
 
             return View();
         }
+        public ActionResult IntakeForm()
+        {
+            return View();
+        }
     }
 }
