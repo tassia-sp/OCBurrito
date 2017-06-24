@@ -5,8 +5,9 @@
     <br />
     <br />
 
-    <div class="container">
-        <div id="map"></div>
+    <div id="locationField">
+        <input id="autocomplete" placeholder="Enter your address"
+               onFocus="geolocate()" type="text"></input>
     </div>
 
     <div class="list-group">
@@ -46,6 +47,14 @@
     </script>
 
     <script>
+        var placeSearch, autocomplete;
+
+        function initAutocomplete() {
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+            autocomplete = new google.maps.places.Autocomplete(
+                (document.getElementById('autocomplete')),
+                {types: ['geocode']});
         var x = document.getElementById("gps");
         function getLocation() {
             if (navigator.geolocation) {
@@ -61,4 +70,7 @@
 
 
     </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB75i41DrdobNtl1D-moulR4fXxQZmrKYg&libraries=places&callback=initAutocomplete"
+        async defer></script>
 }
