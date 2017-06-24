@@ -4,5 +4,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Emergency</h2>
+@section stylesheets{
+    <style>
+        .jumbotron {
+            text-align: center;
+        }
+    </style>
+}
+<br />
+<div class="jumbotron">
+    <h1 class="display-3" style="text-align:center">Emergency Services</h1>
+    <p>Do you have a medical emergency? Refer to the resources below for places near you or call 911.</p>
+    <!-- google maps places goes here-->
+    <p class="text-primary">For more information and other resources, visit <a href="www.211oc.org">211 OC</a></p>
+</div>
 
