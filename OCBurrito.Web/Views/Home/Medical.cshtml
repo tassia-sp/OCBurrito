@@ -4,5 +4,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Medical</h2>
+@section stylesheets{
+    <style>
+        .jumbotron {
+            text-align: center;
+        }
+    </style>
+}
+<br />
+<div class="jumbotron">
+    <h1 class="display-3" style="text-align:center">Medical Services</h1>
+    <p>Need to locate a health clinic ot hospital? Find a location nearby.</p>
+    <!-- google maps places goes here-->
+    <p class="text-primary">For more information and other resources, visit <a href="www.211oc.org">211 OC</a></p>
+</div>
 

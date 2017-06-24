@@ -3,41 +3,38 @@
 
     </style>
 
-
 }
-
 
 <div class="container" ng-controller="homeController as HCtrl">
 
-    <button onclick="getLocation()" type="button" id="gps" class="btn btn-primary">Get My Location TODO:GlyphIcon Me</button>
-
+    <br />
+    <a href="#" onclick="getLocation()" id="gps" class="btn btn-primary left">GPS Location</a>
     <br />
     <br />
-
-    <div id="locationField">
-        <input id="autocomplete" placeholder="Enter your address"
-               onFocus="geolocate()" type="text"></input>
-    </div>
 
     <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
+        <a href="Home/Housing" class="list-group-item list-group-item-action active">
             <h4 class="list-group-item-heading text-center">Housing</h4>
             <p class="list-group-item-text text-center">You can easily find a web hosting company that offers the right mix of features and price for your applications</p>
         </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="Home/FaithOrg" class="list-group-item list-group-item-action">
             <h4 class="list-group-item-heading text-center">Faith Based Organizations</h4>
             <p class="list-group-item-text text-center">Get access to your local faith orginzations including housing options and criteria for acceptance</p>
         </a>
-        <a href="#" class="list-group-item list-group-item-action active">
+        <a href="Home/Medical" class="list-group-item list-group-item-action active">
             <h4 class="list-group-item-heading text-center">Medical Services</h4>
             <p class="list-group-item-text text-center">Information regarding medical services that accept Medicare/MediCAL</p>
         </a>
-        <a href="#" class="list-group-item list-group-item-action">
+        <a href="Home/Emergency" class="list-group-item list-group-item-action">
             <h4 class="list-group-item-heading text-center">Emergency Servies</h4>
             <p class="list-group-item-text text-center">5150 Hold info, emergency room locations, Crisis stabalization units, mobile health clinics, 24/7 chat resources</p>
         </a>
     </div>
 </div>
+<!-- Begin Google Map HTML-->
+<div id="map"></div>
+<!-- End Google Map HTML-->
+
 @section scripts {
     <script type="text/javascript">
 
@@ -52,7 +49,6 @@
                 vm.$scope = $scope;
                 vm.modalOpen = _modalOpen
                 vm.$uibModal = $uibModal;
-
 
                 render();
 
@@ -86,10 +82,6 @@
 
 
                 }
-
-
-
-
             }
         })();
 
@@ -120,16 +112,9 @@
         })();
     </script>
 
-    <script>
-        var placeSearch, autocomplete;
-
-        function initAutocomplete() {
-            // Create the autocomplete object, restricting the search to geographical
-            // location types.
-            autocomplete = new google.maps.places.Autocomplete(
-                (document.getElementById('autocomplete')),
-                {types: ['geocode']});
+    <script type="text/javascript">
         var x = document.getElementById("gps");
+
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
@@ -137,14 +122,79 @@
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
         }
+
         function showPosition(position) {
             x.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
         }
 
+        function initAutocomplete() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -33.8688, lng: 151.2195 },
+                zoom: 13,
+                mapTypeId: 'roadmap'
+            });
 
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener('bounds_changed', function () {
+                searchBox.setBounds(map.getBounds());
+            });
+
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function () {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
+                }
+
+                // Clear out the old markers.
+                markers.forEach(function (marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function (place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    var icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25)
+                    };
+
+                    // Create a marker for each place.
+                    markers.push(new google.maps.Marker({
+                        map: map,
+                        icon: icon,
+                        title: place.name,
+                        position: place.geometry.location
+                    }));
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+            });
+        }
     </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB75i41DrdobNtl1D-moulR4fXxQZmrKYg&libraries=places&callback=initAutocomplete"
-        async defer></script>
+
 }
