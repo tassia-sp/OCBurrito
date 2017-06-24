@@ -1,15 +1,13 @@
 ﻿<div class="container" ng-controller="homeController as HCtrl">
-    <div class="container">
-        <div class="form-group">
-            <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="usr">
-        </div>
-    </div>
+
     <button onclick="getLocation()" type="button" id="gps" class="btn btn-primary">Get My Location TODO:GlyphIcon Me</button>
 
     <br />
     <br />
 
+    <div class="container">
+        <div id="map"></div>
+    </div>
 
     <div class="list-group">
         <a href="#" class="list-group-item list-group-item-action active">
@@ -60,5 +58,7 @@
             x.innerHTML = "Latitude: " + position.coords.latitude +
             "<br>Longitude: " + position.coords.longitude;
         }
+
+
     </script>
 }
