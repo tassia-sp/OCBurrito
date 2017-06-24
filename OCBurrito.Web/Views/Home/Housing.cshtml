@@ -3,43 +3,40 @@
     ViewBag.Title = "Housing";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section stylesheets{
+    <style>
+        .jumbotron{
+            text-align: center;
+        }
+    </style>
+    }
 
 <div class="jumbotron">
-    <h1 class="display-3">Housing Resources</h1>
+    <h1 class="display-3" style="text-align:center">Housing Resources</h1>
     <p>Need shelter for the night? Refer to the resources below for places near you.</p>
-</div>
-<!--each card is a housing item search that is pulled up-->
-<div class="card card-inverse card-primary text-xs-center">
-    <div class="card-block">
-        <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-    </div>
-</div>
-<div class="card card-inverse card-primary text-xs-center">
-    <div class="card-block">
-        <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-    </div>
-</div>
-<div class="card card-inverse card-primary text-xs-center">
-    <div class="card-block">
-        <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-    </div>
-</div>
-<div class="card card-inverse card-primary text-xs-center">
-    <div class="card-block">
-        <blockquote class="card-blockquote">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-    </div>
+    <!-- google maps places goes here-->
+    <p class="text-primary">For more information and other resources, visit <a href="www.211oc.org">211 OC</a></p>
 </div>
 
+<h2>Other Resources</h2>
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#calworks" data-toggle="tab" aria-expanded="true">CalWORKs</a></li>
+    <li class=""><a href="#employment" data-toggle="tab" aria-expanded="false">Employment Services</a></li>
+    <li class=""><a href="#links"  data-toggle="tab" aria-expanded="false">Useful Links</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade" id="calworks">
+        <p>The California Work Opportunity and Responsibility to Kids (<a href="http://ssa.ocgov.com/calfresh/calworks">CalWORKs)</a>) program provides
+        cash benefits for the care of children in need when one or both parents are absent, disabled,
+        deceased or unemployed. If you are eligible for CalWORKs, you automatically qualify for Medi-Cal
+        and you might qualify for CalFresh (formerly known as Food Stamps) as well.</p>
+    </div>
+    <div class="tab-pane fade in" id="employment">
+        <p>For help with vocational assesments, mental health and substance abuse, job services, and education /training programs visit <a href="http://ssa.ocgov.com/calfresh/calworks/employment">OC Employment Services</a>. For those who are approved or receive CalWORKs</p>
+    </div>
+    <div class="tab-pane fade in" id="links">
+        <ul>
+            <li><a href="https://singleparentactionnetwork.com/">Single Parent Action Network</a> <p>Helping parents with grant information, food assistance, and child support.</p></li>
+        </ul>
+    </div>
+</div>
