@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("stylesheets", required:false)
 
 </head>
 <body ng-app="OCApp">
@@ -22,6 +23,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Intake Form", "IntakeForm", "Home")</li>
                     <li>@Html.ActionLink("Housing", "Housing", "Home")</li>
                     <li>@Html.ActionLink("Faith Organizations", "FaithOrg", "Home")</li>
                     <li>@Html.ActionLink("Medical Services", "Medical", "Home")</li>

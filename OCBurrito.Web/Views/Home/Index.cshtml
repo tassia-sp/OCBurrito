@@ -1,4 +1,13 @@
-﻿<div class="container" ng-controller="homeController as HCtrl">
+﻿@section stylesheets{
+    <style>
+
+    </style>
+
+
+}
+
+
+<div class="container" ng-controller="homeController as HCtrl">
     <div class="container">
         <div class="form-group">
             <label for="usr">Name:</label>
@@ -6,7 +15,6 @@
         </div>
     </div>
     <button>GPS Location</button>
-
     <div class="container">
         <div class="row">
             <div class="text-center col-md-12">
@@ -16,7 +24,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="text-center col-md-12">
@@ -26,7 +33,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="text-center col-md-12">
@@ -36,7 +42,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="text-center col-md-12">
@@ -47,7 +52,6 @@
         </div>
     </div>
 </div>
-
 @section scripts {
     <script type="text/javascript">
 
@@ -57,10 +61,76 @@
             angular.module("OCApp").controller('homeController', HomeController);
 
 
-            function HomeController($scope, $http) {
+            function HomeController($scope, $http, $uibModal) {
                 var vm = this;
                 vm.$scope = $scope;
+                vm.modalOpen = _modalOpen
+                vm.$uibModal = $uibModal;
+
+
+                render();
+
+                function render() {
+
+                    //_modalOpen();
+
+                }
+
+                function _modalOpen(items) {
+
+                    var modalInstance = $uibModal.open({
+                        templateUrl: '/Content/ModalTemplates/LandingPageModal.html',
+                        controller: 'ModalInstanceCtrl',
+                        controllerAs: 'modalCtrl',
+                        size: 'md',
+                        backdrop: true,
+                        windowClass: 'app-modal-window',
+                        resolve: {
+                            items: function () {
+                                return vm.items;
+                            }
+                        }
+                    });
+
+                    modalInstance.result.then(function (selectedItem) {
+                        vm.selected = selectedItem;
+                    }, function () {
+                        console.log('Modal dismissed at: ' + new Date());
+                    });
+
+
+                }
+
+
+
+
             }
+        })();
+
+        (function () {
+            "use strict";
+
+            angular.module('OCApp').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items, $window) {
+                var vm = this;
+                vm.items = items;
+                vm.selected = {
+                    item: vm.items
+                };
+
+                vm.ok = function () {
+                    $uibModalInstance.close(vm.selected.item);
+                    console.log("ok")
+                    $window.location = "/Home/IntakeForm"
+
+                };
+
+                vm.cancel = function () {
+                    $uibModalInstance.dismiss('cancel');
+                    console.log("cancel")
+                };
+            });
+
+
         })();
 
     </script>

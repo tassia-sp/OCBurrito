@@ -1,4 +1,4 @@
 ﻿(function () {
-    angular.module("OCApp", [])
+    angular.module("OCApp", ['ui.bootstrap'])
 
 })();
