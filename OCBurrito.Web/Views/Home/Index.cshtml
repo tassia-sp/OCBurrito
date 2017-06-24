@@ -1,9 +1,12 @@
-﻿<div class="container-fluid">
+
+﻿<div class="container" ng-controller="homeController as HCtrl">
     <div class="row">
         <div class="col-md-12">
             <input placeholder="Search" type="text" />
         </div>
         <button>GPS Location</button>
+
+        {{2+2}}
     </div>
 </div>
 
@@ -50,6 +53,23 @@
 @section scripts {
     <script type="text/javascript">
 
+        (function () {
+            "use strict"
+
+            angular.module("OCApp").controller('homeController', HomeController);
+
+
+            function HomeController($scope, $http) {
+                var vm = this;
+                vm.$scope = $scope;
+
+
+
+
+            }
+
+
+        })();
 
     </script>
 }
