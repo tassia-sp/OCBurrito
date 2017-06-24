@@ -13,6 +13,26 @@ namespace OCBurrito.Web.Controllers
             return View();
         }
 
+        public ActionResult Housing()
+        {
+            return View();
+        }
+
+        public ActionResult FaithOrg()
+        {
+            return View();
+        }
+
+        public ActionResult Medical()
+        {
+            return View();
+        }
+
+        public ActionResult Emergency()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
