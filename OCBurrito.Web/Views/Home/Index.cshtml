@@ -5,8 +5,8 @@
             <input type="text" class="form-control" id="usr">
         </div>
     </div>
-    <button type="button" class="btn btn-primary">Get My Location TODO:GlyphIcon Me</button>
-    
+    <button onclick="getLocation()" type="button" id="gps" class="btn btn-primary">Get My Location TODO:GlyphIcon Me</button>
+
     <br />
     <br />
 
@@ -45,5 +45,20 @@
                 vm.$scope = $scope;
             }
         })();
+    </script>
+
+    <script>
+        var x = document.getElementById("gps");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+        }
     </script>
 }
