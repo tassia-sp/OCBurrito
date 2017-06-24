@@ -14,18 +14,27 @@
 <div class="jumbotron">
     <h1 class="display-3" style="text-align:center">Shelters</h1>
     <p>Need shelter for the night? Refer to the resources below for places near you.</p>
-    <!-- google maps places goes here-->
+    <br />
+    <div class="center-orientation" style="text-align:center" id="googleMaps">
+        <div id="">
+            <input class="btn btn-primary" id="address" type="text" value="Type a location to begin">
+            <input class="btn btn-primary" id="submit" type="button" value="Search">
+        </div>
+        <br>
+        <div id="map"></div>
+    </div> <!--googleMaps-->
+    <br />
     <p class="text-primary">For more information and other resources, visit <a href="www.211oc.org">211 OC</a></p>
 </div>
 <br />
-<h2>Other Resources</h2>
+<h2 style="text-align:center">Other Resources</h2>
 <ul class="nav nav-tabs">
     <li class="active"><a href="#calworks" data-toggle="tab" aria-expanded="true">CalWORKs</a></li>
     <li class=""><a href="#employment" data-toggle="tab" aria-expanded="false">Employment Services</a></li>
     <li class=""><a href="#links"  data-toggle="tab" aria-expanded="false">Useful Links</a></li>
 </ul>
 <div id="myTabContent" class="tab-content">
-    <div class="tab-pane active fade" id="calworks">
+    <div class="tab-pane fade active in" id="calworks">
         <p>The California Work Opportunity and Responsibility to Kids (<a href="http://ssa.ocgov.com/calfresh/calworks">CalWORKs)</a>) program provides
         cash benefits for the care of children in need when one or both parents are absent, disabled,
         deceased or unemployed. If you are eligible for CalWORKs, you automatically qualify for Medi-Cal
@@ -41,3 +50,72 @@
         </ul>
     </div>
 </div>
+
+@section scripts{
+
+    <script>
+        // Note: This requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+        var map, infoWindow;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 10
+            });
+            infoWindow = new google.maps.InfoWindow;
+
+            var geocoder = new google.maps.Geocoder();
+
+            document.getElementById('submit').addEventListener('click', function () {
+                geocodeAddress(geocoder, map);
+            });
+
+            function geocodeAddress(geocoder, resultsMap) {
+                var address = document.getElementById('address').value;
+                geocoder.geocode({ 'address': address }, function (results, status) {
+                    if (status === 'OK') {
+                        resultsMap.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: resultsMap,
+                            position: results[0].geometry.location
+                        });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                }); //geocodeAddress
+            }
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent('Current location.');
+                    infoWindow.open(map);
+                    map.setCenter(pos);
+                }, function () {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        } //handleLocationError
+    </script>
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBkkoj56XO_iEvo9YqjEwO0Q5iekPGJjVo&callback=initMap"></script>
+}

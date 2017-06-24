@@ -27,12 +27,12 @@ select {
         * element that contains the map. */
 #map {
     height: 300px;
-    width: 75%;
+    width: 100%;
     background-color: grey;
 }
 /* Optional: Makes the sample page fill the window. */
 
-#floating-panel {
+/*#floating-panel {
     position: absolute;
     top: 10px;
     left: 25%;
@@ -44,7 +44,7 @@ select {
     font-family: 'Roboto','sans-serif';
     line-height: 30px;
     padding-left: 10px;
-}
+}*/
 
 th, tr {
     text-align: center;
