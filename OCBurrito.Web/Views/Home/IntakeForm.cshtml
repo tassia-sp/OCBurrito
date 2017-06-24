@@ -3,6 +3,351 @@
     ViewBag.Title = "IntakeForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section stylesheets{
+    <style>
+        .headLine {
+            text-align: center;
+            margin-top: 50px;
+        }
 
-<h2>IntakeForm</h2>
+        input, select {
+            max-width: 500px;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .questionTitle {
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+
+}
+
+
+<div class="container">
+    <div>
+        <h2 class="headLine">Coordinated Entry Intake ‐ Individual</h2>
+    </div>
+    <form class="form-group">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <label class="questionTitle">1a. Street Outreach Team or In‐Reach Site:</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="questionTitle">1b. Interviewer’s Name:</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="questionTitle">1c. Survey Date:</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="questionTitle">1d. Survey Time:</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="questionTitle">1e. Survey Location (City):</label>
+                <input type="text" class="form-control" />
+            </div>
+            <hr />
+            <div>
+                <div class="col-md-12">
+                    <label class="questionTitle">3. Will you be completing the full assessment?</label>
+                    <br /><label><input type="checkbox"> Yes (CE Intake, VI‐SPDAT and Housing Preference Survey)</label>
+                    <br /><label><input type="checkbox"> No (Name Only)</label>
+                </div>
+            </div>
+            <div class="row col-md-12">
+                <h3>Client Identification</h3>
+                <div class="col-md-6">
+                    <label class="questionTitle">1. First Name:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label class="questionTitle">3. Last Name:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">2. Middle Name:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">2a. Suffix:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">2b. Alias:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label class="questionTitle">4. Date of Birth:</label>
+                    <input type="date" class="form-control" />
+                    <br /><label><input type="checkbox"> Full DOB reported</label>
+                    <br /><label><input type="checkbox"> Approximate or partial DOB</label>
+                    <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                    <br /><label><input type="checkbox"> Client Refused</label>
+                    <br /><label><input type="checkbox"> Data not Collected</label>
+                </div>
+                <div class="col-md-6">
+                    <label class="questionTitle">5. Social Security Number (last 4 digits):</label>
+                    <input type="number" class="form-control" />
+                    <br /><label><input type="checkbox"> Approximate or partial SSN reported</label>
+                    <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                    <br /><label><input type="checkbox"> Client Refused</label>
+                    <br /><label><input type="checkbox"> Data not Collected</label>
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <h3>Client Contact Information</h3>
+                <div class="col-md-12">
+                    <small>Do you have a number and/or email where I can follow up with you or leave a message?</small>
+                </div>
+
+                <div class="col-md-8">
+                    <label class="questionTitle">6. Main Phone #:</label>
+                    <input type="number" class="form-control" />
+                    <br /><label><input type="checkbox"> Message/VM okay</label>
+                </div>
+                <div class="col-md-4">
+                    <label>Contact Preference </label>
+                    <input type="number" class="form-control" />
+                    <br /><label><input type="checkbox"> Phone</label>
+                    <br /><label><input type="checkbox"> Text</label>
+                    <br /><label><input type="checkbox"> Email</label>
+                </div>
+                <div class="col-md-8">
+                    <label class="questionTitle">6a. Alternate Phone #:</label>
+                    <input type="number" class="form-control" />
+                    <br /><label><input type="checkbox"> Message/VM okay</label>
+                </div>
+                <div class="col-md-8">
+                    <label class="questionTitle">7. Email:  </label>
+                    <input type="number" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h3>Client Demographics</h3>
+                <div class="col-md-4">
+                    <label class="questionTitle">8. Gender:</label>
+                    <br /><label><input type="checkbox"> Male</label>
+                    <br /><label><input type="checkbox"> Female</label>
+                    <br /><label><input type="checkbox"> Transgender Female to Male</label>
+                    <br /><label><input type="checkbox"> Transgender Male to Female</label>
+                    <br /><label>Other:</label><input type="text" class="form-control" />
+                    <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                    <br /><label><input type="checkbox"> Client Refused</label>
+                    <br /><label><input type="checkbox"> Data not Collected</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">9. Do you have a disability?</label>
+                    <small>(Physical, Developmental, Mental Health, Chronic Health Condition, HIV/AIDS, and/or Substance Use Disorder)</small>
+                    <br /><label><input type="checkbox"> Yes</label>
+                    <br /><label><input type="checkbox"> No</label>
+                    <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                    <br /><label><input type="checkbox"> Client Refused</label>
+                    <br /><label><input type="checkbox"> Data Not Collected</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">10. Have you ever served in the U.S. Armed Forces?</label>
+                    <br /><label><input type="checkbox"> Yes, please administer VA release of information</label>
+                    <br /><label><input type="checkbox"> No</label>
+                    <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                    <br /><label><input type="checkbox"> Client Refused</label>
+                    <br /><label><input type="checkbox"> Data Not Collected</label>
+                </div>
+                <hr />
+                <div class="col-md-12">
+                    <div>
+                        <label class="questionTitle">11. Education Level</label>
+                        <br /><small>What is the highest degree or level of school you have completed? If currently enrolled, highest degree received. </small>
+                    </div>
+                    <div class="col-md-4">
+                        <br /><label><input type="checkbox"> No Schooling Completed</label>
+                        <br /><label><input type="checkbox"> Nursery School to 4th Grade</label>
+                        <br /><label><input type="checkbox"> 5th or 6th Grade</label>
+                        <br /><label><input type="checkbox"> 7th or 8th Grade</label>
+                        <br /><label><input type="checkbox"> 9th Grade</label>
+                    </div>
+                    <div class="col-md-4">
+                        <br /><label><input type="checkbox"> 10th Grade</label>
+                        <br /><label><input type="checkbox"> 11th Grade</label>
+                        <br /><label><input type="checkbox"> 12th Grade, no diploma</label>
+                        <br /><label><input type="checkbox"> High School Diploma</label>
+                        <br /><label><input type="checkbox"> GED</label>
+                        <br /><label><input type="checkbox"> Post‐Secondary School</label>
+                    </div>
+                    <div class="col-md-4">
+                        <br /><label><input type="checkbox"> 4‐years College Degree</label>
+                        <br /><label><input type="checkbox"> Graduate School</label>
+                        <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                        <br /><label><input type="checkbox"> Client Refused</label>
+                        <br /><label><input type="checkbox"> Data not Collected</label>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <label class="questionTitle">12. Which category best describes your race?</label>
+                    <br /><small>(Check All that Apply):</small>
+                    <br /><label><input type="checkbox"> Asian</label>
+                    <br /><label><input type="checkbox"> Black or African American</label>
+                    <br /><label><input type="checkbox"> Native Hawaiian/Other Pacific Islander</label>
+                    <br /><label><input type="checkbox"> American Indian/Alaska native</label>
+                    <br /><label><input type="checkbox"> White</label>
+                    <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                    <br /><label><input type="checkbox"> Client Refused</label>
+                    <br /><label><input type="checkbox"> Data not Collected</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">13. Which category best describes your ethnicity?</label>
+                    <br /><label><input type="checkbox"> Non‐Hispanic</label>
+                    <br /><label><input type="checkbox"> Hispanic</label>
+                    <br /><label><input type="checkbox"> Client Doesn’t Know</label>
+                    <br /><label><input type="checkbox"> Client Refused</label>
+                    <br /><label><input type="checkbox"> Data Not Collected</label>
+                </div>
+                <div class="col-md-8">
+                    <label class="questionTitle">14. On a regular day, where is it easiest to find you?</label>
+                    <br /><label><input type="checkbox"> Street</label>
+                    <br /><label><input type="checkbox"> Vehicle</label>
+                    <br /><label><input type="checkbox"> Abandoned building</label>
+                    <br /><label><input type="checkbox"> Bus/train/subway station/airport</label>
+                    <br /><label><input type="checkbox"> Drop In Center</label>
+                    <br /><label><input type="checkbox"> Day services center</label>
+                    <br /><label><input type="checkbox"> Soup Kitchen</label>
+                    <br /><label><input type="checkbox"> Emergency Shelter</label>
+                    <br /><label><input type="checkbox"> Transitional Housing</label>
+                    <br /><label><input type="checkbox"> Permanent Housing</label>
+                    <br /><label><input type="checkbox"> Clinic/Hospital – Health</label>
+                    <br /><label><input type="checkbox"> Clinic/Hospital – Mental Health</label>
+                    <br /><label><input type="checkbox"> Clinic/Hospital – Substance Abuse</label>
+                    <br /><label><input type="checkbox"> Jail, prison, or juvenile detention facility</label>
+                    <br /><label><input type="checkbox"> Family or friend’s room, apartment, condo, or house</label>
+                    <br /><label><input type="checkbox"> Foster care or group home</label>
+                    <br /><label>Other:</label><input type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">14a. Intersection:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">14b. Landmark:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">14c. City:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label class="questionTitle">14d. Zip Code:</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="col-md-12">
+                    <label for="notes" class="questionTitle">Notes:</label>
+                </div>
+                <div class="col-md-12">
+                    <textarea name="notes" class="form-group" rows="8" cols="8"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <label for="notes" class="questionTitle">VI‐SPDAT for Single Adults, American Version 2.0 – obtained from http://www.orgcode.com/ </label>
+            </div>
+            <div class="col-md-12">
+                <p>IF THE PERSON IS 60 YEARS OF AGE OR OLDER, THEN SCORE 1.  </p>
+                <br /><p>HISTORY OF HOUSING AND HOMELESSNESS</p>
+            </div>
+            <div class="col-md-6">
+                <label class="questionTitle">1. Where do you sleep most frequently?</label>
+                <br /><label><input type="checkbox"> Shelters</label>
+                <br /><label><input type="checkbox"> Transitional Housing</label>
+                <br /><label><input type="checkbox"> Safe Haven</label>
+                <br /><label><input type="checkbox"> Outdoors</label>
+                <br /><label><input type="checkbox"> Refused</label>
+                <br /><label>Other (specify):</label><input type="text" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label class="questionTitle">Address:</label>
+                <input type="text" class="form-control" />
+                <label class="questionTitle">1a. Intersection:</label>
+                <input type="text" class="form-control" />
+                <label class="questionTitle">1b. Landmark:</label>
+                <input type="text" class="form-control" />
+                <label class="questionTitle">1c. City: </label>
+                <input type="text" class="form-control" />
+                <label class="questionTitle">1d. Zip Code: </label>
+                <input type="text" class="form-control" />
+                <br /><label><input type="checkbox"> Same As Above</label>
+            </div>
+            <div class="col-md-12">
+                <p>IF THE PERSON ANSWERS ANYTHING OTHER THAT SHELTER, TRANSITIONAL HOUSING, OR SAFE HEAVEN, THEN SCORE 1.   </p>
+            </div>
+            <div class="col-md-12">
+                <label class="questionTitle">2. How long has it been since you lived in permanent stable housing?</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-md-12">
+                <label class="questionTitle">3. In the past three years, how many time have you been housed and then homeless again?</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-md-12">
+                <label class="questionTitle">4. In the last three years, what is the total number of months spent homeless on the streets, in an emergency shelter, or place not meant for human habitation?</label>
+                <input type="text" class="form-control" />
+            </div>
+            <div class="col-md-12">
+                <p>IF THE PERSON HAS EXPERIENCED 12 OR MORE MONTHS OF HOMELESSNESS (CONSECUTIVE OR NOT), AND/OR 4+ EPISODES OF HOMELESSNESS, THEN SCORE 1.</p>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>Page Total A:</p>
+            </div>
+            <div class="col-md-12">
+                <label class="questionTitle">5. In the past six months, how many times have you…</label>
+                <div>
+                    <label>a. Received health care at an emergency department/room?<input type="number" class="form-control" /></label>
+                </div>
+                <div>
+                    <label>b. Taken an ambulance to the hospital?<input type="number" class="form-control" /></label>
+                </div>
+                <div>
+                    <label>c. Been hospitalized as an inpatient?<input type="number" class="form-control" /></label>
+                </div>
+                <div>
+                    <label>d. Used a crisis service, including sexual assault crisis, mental health crisis, family/intimate violence, distress centers and suicide prevention hotline?<input type="number" class="form-control" /></label>
+                </div>
+                <div>
+                    <label>e. Talked to police because you witnessed a crime, were the victim of a crime, or the alleged perpetrator of a crime or because the police told you that you must move along?<input type="number" class="form-control" /></label>
+                </div>
+                <div>
+                    <label>f. Stayed one or more nights in a holding cell, jail or prison, whether that was a short‐term stay like the drunk tank, a longer stay for a more serious offence, or anything in between?<input type="number" class="form-control" /></label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>IF THE TOTAL NUMBER OF INTERACTIONS EQUALS 4 OR MORE, THEN SCORE 1 FOR EMERGENCY SERVICE USE.</p>
+            </div>
+            <div>
+                <label class="questionTitle">6. Have you been attacked or beaten up since you’ve become homeless?</label>
+                <br /><label><input type="checkbox"> Yes</label><label><input type="checkbox"> No</label><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">7. Have you threatened to or tried to harm yourself or anyone else in the last year?</label>
+                <br /><label><input type="checkbox"> Yes</label><label><input type="checkbox"> No</label><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-md-12">
+                <p>IF YES TO ANY OF THE ABOVE, THEN SCORE 1 FOR RISK OF HARM.</p>
+            </div>
+            <div>
+                <label class="questionTitle">Do you have any legal stuff going on right now that may result in you being locked up, having to pay fines, or that make it more difficult for you to rent a place to live?</label>
+                <br /><label><input type="checkbox"> Yes</label><label><input type="checkbox"> No</label><label><input type="checkbox"> Refused</label>
+            </div>
+        </div>
+    </form>
+</div>
 
