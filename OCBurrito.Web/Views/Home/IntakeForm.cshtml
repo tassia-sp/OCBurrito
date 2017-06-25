@@ -26,6 +26,9 @@
             font-weight: bold;
             font-size: 16px;
         }
+        label {
+        margin-left:5px;
+        }
     </style>
 
 }
@@ -306,7 +309,7 @@
                 <p>IF THE PERSON HAS EXPERIENCED 12 OR MORE MONTHS OF HOMELESSNESS (CONSECUTIVE OR NOT), AND/OR 4+ EPISODES OF HOMELESSNESS, THEN SCORE 1.</p>
             </div>
             <div class="col-push-md-10 col-md-12">
-                <p>Page Total A:</p>
+                <p>Page Total A:<input class="form-control" type="text" /></p>
             </div>
             <div class="col-md-12">
                 <label class="questionTitle">5. In the past six months, how many times have you…</label>
@@ -334,20 +337,220 @@
             </div>
             <div>
                 <label class="questionTitle">6. Have you been attacked or beaten up since you’ve become homeless?</label>
-                <br /><label><input type="checkbox"> Yes</label><label><input type="checkbox"> No</label><label><input type="checkbox"> Refused</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
             </div>
             <div>
                 <label class="questionTitle">7. Have you threatened to or tried to harm yourself or anyone else in the last year?</label>
-                <br /><label><input type="checkbox"> Yes</label><label><input type="checkbox"> No</label><label><input type="checkbox"> Refused</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
             </div>
             <div class="col-md-12">
                 <p>IF YES TO ANY OF THE ABOVE, THEN SCORE 1 FOR RISK OF HARM.</p>
             </div>
             <div>
                 <label class="questionTitle">Do you have any legal stuff going on right now that may result in you being locked up, having to pay fines, or that make it more difficult for you to rent a place to live?</label>
-                <br /><label><input type="checkbox"> Yes</label><label><input type="checkbox"> No</label><label><input type="checkbox"> Refused</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+
+            </div>
+            <div class="col-md-12">
+                <p>IF YES, THEN SCORE 1 FOR LEGAL ISSUES.</p>
+            </div>
+            <div>
+                <label class="questionTitle"> 9. Does anybody force or trick you to do things that you do not want to do?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">10. Do you ever do things that may be considered risky like exchange sex for money, run drugs for someone, have unprotected sex with someone you don’t know, share a needle, or anything like that?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-md-12">
+                <p>IF YES TO ANY OF THE ABOVE, THEN SCORE 1 FOR RISK OF EXPLOITATION. </p>
+            </div>
+            <div class="col-md-12">
+                <p>SOCIALIZATION & DAILY FUNCTIONING</p>
+            </div>
+            <div>
+                <label class="questionTitle">11. Is there any person, past landlord, business, bookie, dealer, or government group like the IRS that thinks you owe them money?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">12. Do you get any money from the government, a person, an inheritance, working under the table, a regular job, or anything like that?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-md-12">
+                <p>IF YES TO QUESTION 11 OR NO TO QUESTION 12, THEN SCORE 1 FOR MONEY MANAGEMENT.</p>
+            </div>
+            <div>
+                <label class="questionTitle">13. Do you have planned activities, other than just surviving that make you feel happy and fulfilled?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-md-12">
+                <p>IF NO, THEN SCORE 1 FOR MEANINGFUL DAILY ACTIVITY.</p>
+            </div>
+            <div>
+                <label class="questionTitle">14. Are you currently able to take care of basic needs like bathing, changing clothes, using a restroom, getting food and clean water, and other things like that?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-md-12">
+                <p>IF NO, THEN SCORE 1 FOR SELF‐CARE. </p>
+            </div>
+            <div>
+                <label class="questionTitle">15. Is your current homelessness in any way caused by a relationship that broke down, an unhealthy or abusive relationship, or because family or friends caused you to become evicted?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-md-12">
+                <p>IF YES, THEN SCORE 1 FOR SOCIAL RELATIONSHIPS.</p>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>Page Total B:</p>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>WELLNESS</p>
+            </div>
+            <div>
+                <label class="questionTitle">
+                    16. Have you ever had to leave an apartment, shelter program or other place you were staying because of your physical health?
+                </label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">
+                    17. Do you have any chronic health issues with your liver, kidneys, stomach lungs or heart?
+                </label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">
+                    18. If there was space available in a program that specifically assists people that live with HIV or AIDS, would that be of interest to you?
+                </label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle"> 19. Do you have any physical disabilities that would limit the type of housing you could assess, or would make it hard for you to live independently because you’d need help?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">20. When you are sick or not feeling well, do you avoid getting help?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">21. FOR FEMALE RESPONDENTS ONLY: Are you currently pregnant?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>IF YES TO ANY OF THE ABOVE, THEN SCORE 1 FOR PHYSICAL HEALTH.</p>
+            </div>
+            <div>
+                <label class="questionTitle">22. Has your drinking or drug use led you to being kicked out of an apartment or program where you were staying in the past?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">23. Will drinking or drug use make it difficult for you to stay housed or afford your housing?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>IF YES TO ANY OF THE ABOVE, THEN SCORE 1 FOR SUBSTANCE USE.</p>
+            </div>
+            <div>
+                <label class="questionTitle">22. Has your drinking or drug use led you to being kicked out of an apartment or program where you were staying in the past?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">24. Have you ever had trouble maintaining your housing, or been kicked out of an apartment, shelter program, or other place you were staying, because of:</label>
+                <br /><label> a. A mental health issue or concern?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+
+                <br /><label> b. A past head injury?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+
+                <br /><label> c. A learning disability developmental disability, or other impairment?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+
+            </div>
+            <div>
+                <label class="questionTitle">25. Do you have any mental health or brain issues that would make it hard for you to live independently because you’d need help?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>IF YES TO ANY OF THE ABOVE, THEN SCORE 1 FOR MENTAL HEALTH. </p>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>IF THE RESPONDENT SCORE 1 FOR PHYSICAL HEALTH AND 1 FOR SUBSTANCE USE AND 1 FOR MENTAL HEALTH, SCORE 1 FOR TRI‐MORBIDITY.</p>
+            </div>
+            <div>
+                <label class="questionTitle">26. Are there any medications that a doctor said you should be taking that, for whatever reason, you are not taking?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div>
+                <label class="questionTitle">27. Are there any medications like painkillers that you don’t take the way the doctor prescribed or where you sell the medication?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>IF YES TO ANY OF THE ABOVE, THEN SCORE 1 FOR MEDICATIONS. </p>
+            </div>
+            <div>
+                <label class="questionTitle">28. YES or NO: Has your current period of homelessness been caused by an experience of emotional, physical, psychological, sexual, or other type of abuse, or by any other trauma you have experienced?</label>
+                <br /><label><input type="checkbox"> Yes</label>
+                <br /><label><input type="checkbox"> No</label>
+                <br /><label><input type="checkbox"> Refused</label>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>IF YES, SCORE 1 FOR ABUSE AND TRAUMA.  </p>
+            </div>
+            <div class="col-push-md-10 col-md-12">
+                <p>Page Total C:</p>
             </div>
         </div>
+        <button class="btn btn-primary">Submit</button>
     </form>
 </div>
 
